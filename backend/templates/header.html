@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<header>
+    <div class="header-wrapper" id="top">
+        <nav class="nav-header-panel">
+            <div class="navigation-panel">
+                <div class="element-wrapper">
+                    <div class="logo">
+                        <a href="{{ get_site }}">
+                            <img class="logo-image" width="150px" height="60px" srcset="{% static 'media/logo.png' %}" src="{% static 'media/logo.webp' %}" alt="логотип">
+                        </a>
+                    </div>
+                </div>
+                <nav class="meta-links">
+                    <div class="element-wrapper menu-flex">
+                        <a class="telegram tg-flex" href="tg://resolve?domain=@cloud_short_link_bot">
+                            <img height="32px" width="32px" class="tg-img" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/000000/external-telegram-is-a-cloud-based-instant-messaging-and-voice-over-ip-service-logo-shadow-tal-revivo.png" alt="сократить ссылку телеграм"/>
+                            <div class="tg-link">Телеграм бот</div>
+                        </a>
+                    </div>
+                </nav>
+
+            </div>
+        </nav>
+    </div>
+</header>

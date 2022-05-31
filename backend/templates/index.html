@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+{% include 'head.html' %}
+
+<body>
+<div class="srt-main-wrapper">
+    {% include 'header.html' %}
+    <div class="main-content">
+        <div class="content-block">
+            <div class="before-ui">
+                <div class="ui-section">
+                    <h1>{{ page_data.h1 }}</h1>
+                    <div class="input-section">
+                        <form method="post" action="javascript:void(0)">
+                            {% csrf_token %}
+                            <label class="srt-label" for="source-field"></label>
+                            <input autocomplete="off" class="srt-input-url" name="source_link" id="source-field" type="url" placeholder="http://yourlink.com">
+                            <button id="srt-submit-btn" class="srt-send-button" type="button">Сократить!</button>
+                        </form>
+                    </div>
+                    <div id="output" class="output-section disabled">
+                        <label class="srt-label" for="srt-forward-url">Полученная ссылка:</label>
+                        <input class="srt-input-url" id="srt-forward-url" target="_blank" type="text" disabled>
+                        <button id="copy-to-clip" class="srt-send-button" type="button">Копировать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="srt-divider">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="96px" viewBox="0 0 100 100" version="1.1" preserveAspectRatio="none" class="injected-svg bg-primary-3" data-src="/assets/img/dividers/divider-2.svg">
+        <path d="M0,0 C16.6666667,66 33.3333333,99 50,99 C66.6666667,99 83.3333333,66 100,0 L100,100 L0,100 L0,0 Z"></path>
+        </svg>
+    </div>
+    {% if data %}
+        <div id="generated-links">
+
+            <div class="srt-links-list">
+                <ul class="links-list">
+                    {% for link in data %}
+                        <li class="link-el">
+                            <div class="g-link">
+                                <span class="link-text" href="{{ link.forward_link }}">{{ link.forward_link|slice:"40" }}</span>
+                            </div>
+                            <div class="s-link">
+                                <a target="_blank" class="link-text link" href="{{ link.source_link }}">{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{ link.source_link }}</a>
+                            </div>
+                            <button class="g-link-button" type="button">Копировать</button>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% include 'modals.html' %}
+</div>
+</body>
+<footer>
+    <script src="{% static 'core/js/main.js' %}"></script>
+</footer>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<body>
+
+<div id="err-msg" class="srt-notify error-msg" style="display: none">
+    <div class="notify-content">
+        <div class="text-block">
+            <i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i>
+            <span class="notify-text">Некорректный url</span>
+        </div>
+    </div>
+</div>
+
+<div id="success-msg" class="srt-notify success-msg" style="display:none;">
+    <div class="notify-content">
+        <div class="text-block">
+            <i class="fa fa-check-square fa-lg" aria-hidden="true"></i>
+            <span class="notify-text">
+                Ссылка сокращена
+            </span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

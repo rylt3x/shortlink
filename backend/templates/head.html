@@ -1,0 +1,13 @@
+{% load static %}
+<head>
+    <title>{{ page_data.title }} - Короткие ссылки {{ request.META.HTTP_HOST }}</title>
+    <link rel="shortcut icon" href="{% static 'media/favicon.svg' %}" type="image/svg+xml">
+    <link rel="icon" href="{% static 'media/favicon.svg' %}" type="image/svg+xml">
+    <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <meta charset="UTF-8">
+    <meta name="description" content="{{ page_data.description }}">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {% include 'metrics.html' %}
+</head>

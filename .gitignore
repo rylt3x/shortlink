@@ -1,0 +1,12 @@
+**/logs
+*.log
+
+**/yandex_webmaster.html
+
+.venv
+__pycache__
+*.pyc
+src
+**/settings.py
+**/title_parser.py
+
