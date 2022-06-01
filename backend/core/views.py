@@ -10,12 +10,6 @@ import requests
 from core import models
 from project import settings
 
-def send_message(text: str):
-    import requests
-    BOT_TOKEN = "2121695191:AAGB44cI9p1uWusJf7jLa3C4A6EDd7MzesE"
-    url = f'https://api.telegram.org/bot{BOT_TOKEN}/sendMessage?chat_id={439992907}&text={text}'
-    res = requests.get(url)
-
 
 class IndexView(View):
 
